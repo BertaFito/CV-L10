@@ -20,7 +20,7 @@ from yolov3.utils import detect_image
 from yolov3.configs import *
 
 while True:
-    ID = random.randint(0, 50)    # ID = random.randint(0, 200)
+    ID = random.randint(1, 50)    # ID = random.randint(0, 200)
     label_txt = "mnist/mnist_test.txt"
     image_info = open(label_txt).readlines()[ID].split()
 
