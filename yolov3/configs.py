@@ -41,7 +41,7 @@ TRAIN_CLASSES               = "mnist/mnist.names"
 TRAIN_ANNOT_PATH            = "mnist/mnist_train.txt"
 TRAIN_LOGDIR                = "log"
 TRAIN_CHECKPOINTS_FOLDER    = "checkpoints"
-TRAIN_MODEL_NAME = f"{YOLO_TYPE}_custom_Tiny"  # TRAIN_MODEL_NAME            = f"{YOLO_TYPE}_custom"
+TRAIN_MODEL_NAME            = f"{YOLO_TYPE}_custom_Tiny"  # TRAIN_MODEL_NAME            = f"{YOLO_TYPE}_custom"
 TRAIN_LOAD_IMAGES_TO_RAM    = True # With True faster training, but need more RAM
 TRAIN_BATCH_SIZE            = 128  # 4
 TRAIN_INPUT_SIZE            = 416
