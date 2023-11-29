@@ -17,8 +17,8 @@ import random
 from zipfile import ZipFile 
 
 SIZE = 416
-images_num_train = 50     # 1000
-images_num_test = 10      # 200
+images_num_train = 500    # 1000
+images_num_test = 50      # 200
 
 image_sizes = [3, 6, 3] # small, medium, big
 
