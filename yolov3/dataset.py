@@ -253,7 +253,8 @@ class Dataset(object):
 
             # onehot = np.zeros(self.num_classes, dtype=np.float32)
             onehot = tf.one_hot(bbox_class_ind, depth=self.num_classes, dtype=tf.float32)
-            onehot[bbox_class_ind] = 1.0
+            # onehot[bbox_class_ind] = 1.0
+            onehot = tf.tensor_scatter_nd_update(onehot, tf.expand_dims(bbox_class_ind, axis=-1), tf.constant([1.0], dtype=tf.float32))
             uniform_distribution = np.full(self.num_classes, 1.0 / self.num_classes)
             deta = 0.01
             smooth_onehot = onehot * (1 - deta) + deta * uniform_distribution
