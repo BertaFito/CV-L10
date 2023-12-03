@@ -247,21 +247,21 @@ class Dataset(object):
         bboxes_xywh = [np.zeros((self.max_bbox_per_scale, 4)) for _ in range(OUTPUT_LEVELS)]
         bbox_count = np.zeros((OUTPUT_LEVELS,))
 
-        indices = indices.write(0, bbox_class_ind)
-        updates = updates.write(0, 1.0)
+        # indices = indices.write(0, bbox_class_ind)
+        # updates = updates.write(0, 1.0)
 
         for bbox in bboxes:
             bbox_coor = bbox[:4]
             bbox_class_ind = bbox[4]
 
-            onehot = np.zeros(self.num_classes, dtype=np.float32)
+            # onehot = np.zeros(self.num_classes, dtype=np.float32)
+            onehot = np.zeros(self.num_classes, dtype=np.float)
             onehot[bbox_class_ind] = 1.0
             # onehot = tf.one_hot(bbox_class_ind, depth=self.num_classes, dtype=tf.float32)
             # onehot = tf.tensor_scatter_nd_update(onehot, tf.expand_dims(bbox_class_ind, axis=-1), tf.constant([1.0], dtype=tf.float32))
             # indices = tf.TensorArray(tf.int64, 1, dynamic_size=True)
             # updates = tf.TensorArray(tf.float32, 1, dynamic_size=True)
             # onehot = tf.tensor_scatter_nd_update(onehot, indices.stack(), updates.stack())
-
             uniform_distribution = np.full(self.num_classes, 1.0 / self.num_classes)
             deta = 0.01
             smooth_onehot = onehot * (1 - deta) + deta * uniform_distribution
