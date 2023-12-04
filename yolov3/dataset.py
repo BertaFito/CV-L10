@@ -137,6 +137,7 @@ class Dataset(object):
                         exceptions = True
                         self.Delete_bad_annotation(annotation)
                         print("IndexError, something wrong with", annotation[0], "removed this line from annotation file")
+                        break
 
                     batch_image[num, :, :, :] = image
                     batch_label_mbbox[num, :, :, :, :] = label_mbbox
