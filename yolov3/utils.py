@@ -306,13 +306,13 @@ def detect_image(Yolo, image_path, output_path, input_size=416, show=False, CLAS
     # CreateXMLfile("XML_Detections", str(int(time.time())), original_image, bboxes, read_class_names(CLASSES))
 
     if output_path != '': cv2.imwrite(output_path, image)
-    if show:
-        # Show the image
-        cv2.imshow("predicted image", image)
-        # Load and hold the image
-        cv2.waitKey(0)
-        # To close the window after the required kill value was provided
-        cv2.destroyAllWindows()
+    # if show:
+          # Show the image
+    #     cv2.imshow("predicted image", image)
+          # Load and hold the image
+    #     cv2.waitKey(0)
+          # To close the window after the required kill value was provided
+    #     cv2.destroyAllWindows()
         
     return image
 
