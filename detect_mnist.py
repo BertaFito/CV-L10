@@ -20,7 +20,7 @@ from yolov3.utils import detect_image
 from yolov3.configs import *
 
 while True:
-    ID = random.randint(0, 10)    # ID = random.randint(0, 200)
+    ID = random.randint(0, 50)    # ID = random.randint(0, 200)
     label_txt = "mnist/mnist_test.txt"
     image_info = open(label_txt).readlines()[ID].split()
 
@@ -30,3 +30,4 @@ while True:
     yolo.load_weights(f"./checkpoints/{TRAIN_MODEL_NAME}") # use keras weights
 
     detect_image(yolo, image_path, "mnist_test.jpg", input_size=YOLO_INPUT_SIZE, show=True, CLASSES=TRAIN_CLASSES, rectangle_colors=(255,0,0))
+    break
